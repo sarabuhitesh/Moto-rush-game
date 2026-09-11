@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Chivo', sans-serif;
+  }
+  
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  .font-mono, .font-telemetry {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Cyber Scanline & Grid Background */
+.telemetry-grid {
+  background-image: 
+    linear-gradient(to right, rgba(0, 240, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 240, 255, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.carbon-mesh {
+  background-color: #0b0e13;
+  background-image: radial-gradient(rgba(0, 240, 255, 0.08) 1px, transparent 0);
+  background-size: 16px 16px;
+}
+
+/* Chamfered corner cuts */
+.clip-chamfer-btn {
+  clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+}
+
+.clip-chamfer-panel {
+  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px));
+}
+
+.clip-chamfer-card {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+}
+
+.clip-banner {
+  clip-path: polygon(18px 0%, 100% 0%, calc(100% - 18px) 100%, 0% 100%);
+}
+
+.skew-cyber {
+  transform: skewX(-8deg);
+}
+
+.unskew-cyber {
+  transform: skewX(8deg);
+}
+
+/* Glowing animations */
+@keyframes pulse-cyan {
+  0%, 100% {
+    box-shadow: 0 0 18px rgba(0, 240, 255, 0.5), inset 0 0 10px rgba(0, 240, 255, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 32px rgba(0, 240, 255, 0.9), inset 0 0 18px rgba(0, 240, 255, 0.5);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-cyan 2.4s infinite ease-in-out;
+}
+
+@keyframes pulse-red {
+  0%, 100% {
+    box-shadow: 0 0 14px rgba(255, 59, 48, 0.5), inset 0 0 8px rgba(255, 59, 48, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(255, 59, 48, 0.85), inset 0 0 14px rgba(255, 59, 48, 0.6);
+  }
+}
+
+.pulse-red-glow {
+  animation: pulse-red 2.0s infinite ease-in-out;
+}
+
+@keyframes blink-red {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.85); }
+}
+
+.blink-notification {
+  animation: blink-red 1.6s infinite ease-in-out;
+}
+
+/* Speed streak */
+@keyframes speed-streak {
+  0% {
+    transform: translateY(-80px) scaleY(0.4);
+    opacity: 0;
+  }
+  30% { opacity: 0.7; }
+  80% { opacity: 0.8; }
+  100% {
+    transform: translateY(420px) scaleY(1.4);
+    opacity: 0;
+  }
+}
+
+.streak-1 {
+  position: absolute; width: 2px; height: 90px;
+  background: linear-gradient(to bottom, transparent, #00f0ff, transparent);
+  animation: speed-streak 1.4s infinite linear;
+  left: 20%; top: -20px;
+}
+.streak-2 {
+  position: absolute; width: 1.5px; height: 120px;
+  background: linear-gradient(to bottom, transparent, #ff3b30, transparent);
+  animation: speed-streak 1.9s infinite 0.5s linear;
+  right: 25%; top: -30px;
+}
+.streak-3 {
+  position: absolute; width: 2px; height: 80px;
+  background: linear-gradient(to bottom, transparent, #00f0ff, transparent);
+  animation: speed-streak 1.6s infinite 0.9s linear;
+  left: 65%; top: -10px;
+}
+
+/* Arcade Scanlines */
+.scanlines {
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0) 50%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.3)
+  );
+  background-size: 100% 4px;
+}

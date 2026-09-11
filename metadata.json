@@ -1,0 +1,6 @@
+{
+  "name": "MOTO RUSH",
+  "description": "High-octane cyberpunk motorcycle highway racing game with garage tuning, race modes, and live telemetry.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
